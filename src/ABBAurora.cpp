@@ -10,7 +10,22 @@ ABBAurora::ABBAurora(byte address)
     SendStatus = false;
     ReceiveStatus = false;
     clearReceiveData();
+    initReadState();
 }
+
+void ABBAurora::initReadState()
+{
+    Version.ReadState = false;
+    State.ReadState = false;
+    DSP.ReadState = false;
+    TimeDate.ReadState = false;
+    LastFourAlarms.ReadState = false;
+    SystemPN.ReadState = false;
+    SystemSerialNumber.ReadState = false;
+    ManufacturingWeekYear.ReadState = false;
+    FirmwareRelease.ReadState = false;
+}
+
 void ABBAurora::setup(HardwareSerial &hardwareSerial, byte RXGpioPin, byte TXGpioPin, byte TXControllPin)
 {
     TXPinControl = TXControllPin;

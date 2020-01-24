@@ -16,6 +16,7 @@ private:
     static HardwareSerial *serial;
 
     void clearData(byte *data, byte len);
+    void initReadState();
 
     int Crc16(byte *data, int offset, int count);
 
